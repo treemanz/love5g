@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>Love 5G</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+		@font-face {
+			font-family: xjl;
+			src: url('xjlFont.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default_dev.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden_dev.js"></script>
+    <script type="text/javascript" src="js/functions_dev.js"></script>
+</head>
+
+<body>
+	<audio src="world.mp3" autoplay="true">您的浏览器不支持 audio 标签。</audio>
+	<!--<audio src="http://zhangmenshiting2.baidu.com/data2/music/4711248/4711248.mp3?xcode=b4b42cc39e75a836b033f115eaff28df&mid=0.72497737233837" autoplay="true">您的浏览器不支持 audio 标签。</audio>-->
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<span class="placeholder_1"></span><span class="comments">于千万人之中遇见你所要遇见的人，于千万年之中，时间的无涯的荒野里，没有早一步，也没有晚一步，刚巧遇上了，那也没有别的话可说，唯有轻轻地问一声：噢，你也在这里。</span><br />
+				<span style="margin-left:350px;"></span><span class="comments">——张爱玲</span><br/>
+				<span class="english">Dear 5G：</span><br/>
+				<span class="placeholder_2"></span>故事是从2011年1月22日开始的，大学城，雨转晴。<br/>
+				<span class="placeholder_2"></span>南亭渡口，落日长桥，微风徐徐，流水缓缓，不远处停靠的渔船，以及身旁的你，这场景，留在心里历久弥新。<br/>
+				<span class="placeholder_2"></span>彼时，我们还是学生，骑着自行车，随时便可停下，身旁没有闹市的车水马龙、人头攒动，是多么惬意的生活。<br/>
+				<span class="placeholder_2"></span>大四，凤凰花开的路口，我们走到了一起。广州，相距18.7公里，我们走到了一起。<br/>
+				<span class="placeholder_2"></span>也许在以往，或在小城市里，这时间点与距离算不了什么；但在繁华浮世的大城市中，这一切都不简单。<br/>
+				<span></span><br/>
+				<span class="placeholder_2"></span>今天，2012年7月22日，天府路，晴。<br/>
+				<span class="placeholder_2"></span>毕业一年，相爱18月，稚气已去，担子渐多，虽时间愈久，却怕无处安放我们的爱情与青春。<br/>
+				<span class="placeholder_2"></span>此时，你常常烦心，而我不知如何安慰；可是我知道，每个人都有着即便爱人也无法了解的故事与心情，我便不多问，只在旁默默守护，直待有一天，带着你从阴霾里走出。<br/>
+				<span class="placeholder_2"></span>按下快进按钮，能快速地跳过如今的生活，但同时略过的，也有我们的人生。既然如此，踩着满路的灰尘，沿途的风景与爱，亦望细细品尝。<br/>
+				<span class="placeholder_2"></span><span class="english">5G</span>，<span class="english">Wait a little more time</span>，我会更加努力，带你走进下一个人生轨迹！<br/>
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						Love u ever and forever.<br/>
+						<div class="signature">- Mr 5G.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="copyright">
+			Thanks to <a href="http://hackerzhou.me/love/" target="_blank">hackerzhou's Love</a> and <a href="http://www.openrise.com/lab/FlowerPower/" target="_blank">FlowerPower</a> project.<br />
+			Copyright © 2014 <a href='http://treemanz.com/'>treemanz</a> 2011-2014
+		</div>
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2015, 0, 22);
+		//together.setFullYear(2011, 0, 22);
+		together.setHours(0);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "哎呀，你的浏览器不支持HTML5特性啦!<br/>建议使用Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 12000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
